@@ -1,12 +1,15 @@
-use dioxus::{html::link::title, prelude::*};
+use dioxus::prelude::*;
 
 fn main() {
     dioxus::launch(App);
 }
 
+static CSS :Asset = asset!("assets/main.css");
 #[component]
 fn App() -> Element {
-    rsx! { div {
+    rsx! { 
+    document::Stylesheet {href:CSS}
+        div {
         id : "title",
         h1 { "Hotdog !" }
      }
